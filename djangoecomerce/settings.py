@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hols74x0p7a3+yf7@72tdpgd9#!)dsg+bkb03u6-l!^938n)!4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  #se
 
 ALLOWED_HOSTS = []
 
@@ -120,4 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# nao usou essa conf , coloca a pasta sobre a pasta CORE STATICFILES_DIR = [
+#    os.path.join(BASE_DIR,'staticfiles')
+#]
 
