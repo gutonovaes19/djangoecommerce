@@ -113,3 +113,9 @@ manage.py
 .idea/
 design/
 viaPyCharm/
+
+
+manage.bat
+udemyecommerce-master.zip
+udemyecommerce-master/
+Would skip repository udemyecommerce/
