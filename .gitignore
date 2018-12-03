@@ -114,9 +114,7 @@ manage.py
 design/
 viaPyCharm/
 manage.bat
-Procfile
-requirements.txt
-runtime.txt
 udemyecommerce-master.zip
 udemyecommerce-master/
 Would skip repository udemyecommerce/
+requirements.txt
