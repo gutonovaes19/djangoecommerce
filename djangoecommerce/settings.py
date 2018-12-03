@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#base dir é relativo ao diretorio raiz
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#project dir refere-se á pasta sesstings
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -122,5 +127,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # nao usou essa conf , coloca a pasta sobre a pasta CORE STATICFILES_DIR = [
 #    os.path.join(BASE_DIR,'staticfiles')
-#]
+#
+# update database configuration with $DATABASE_URL
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+#honor the x-forwarded-proto header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PHOTO','https')
+
+#ALLOW ALL HOST HEADERS
+ALLOWED_HOSTS = ['*']
+
+#static files (css, javascripy, imagens
+#https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles')
+
 
