@@ -1,16 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from catalog.models import Category
+from catalog.models import Category #10/12/2018 - aula 20
 
 # Create your views here.
 
 def index(request):
-    # lista de produtos - extraido do index.html
-    texts = ['Lorem ipsum', 'dolor sit amet', 'consectetur adipisicing elit',
-             'sed do eiusmod ', 'tempor incididunt ut labore', 'et dolore magna aliqua']
+    #mostrar no menu as categorias -m 10-12-2018 aula 20
     context = {
-        'categories': Category.objects.add(),
+        'categories': Category.objects.all()
     }
 
     return render(request, 'index.html', context)
@@ -24,7 +22,6 @@ def product(request):
     return render(request, 'product.html')
 
 
-def product_list(request):
-    return render(request, 'product_list.html')
+
 
 

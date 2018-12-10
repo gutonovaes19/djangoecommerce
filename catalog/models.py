@@ -34,5 +34,7 @@ class Product(models.Model):
         verbose_name_plural = 'Produtos'
         ordering = ['name']
 
+    #no ao definir essa funcao str, irá retornar para o html o que foi informado
+    # na funcao, se, precisar especificar no html (aula02-20)
     def __str__(self):
         return self.name

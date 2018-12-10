@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>{% block title %} Django E-Commerce {% endblock %} Django E-Commerce</title>
+	<title>{% block title %}Django E-Commerce{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="stylesheet" href="{% static 'assets/bootstrap.min.css' %}" media="screen" />
@@ -24,14 +23,14 @@
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
             <li>
-              <a href="#">Início</a>
+              <a href="{% url 'index' %}">Início</a>
             </li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Categorias <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'catalog:product_list' %}" id="download">Categorias <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="download">
-                <li><a href="{% url 'product_list' %}">Notebooks</a></li>
-				<li><a href="{% url 'product_list' %}">Acessórios</a></li>
-				<li><a href="{% url 'product_list' %}">Celulares</a></li>
+				{% for category in categories %}
+				<li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+				{% endfor %}
               </ul>
             </li>
 			<li>
@@ -45,9 +44,7 @@
       </div>
     </div>
     <div class="container">
-        {% block container %}
-
-        {% endblock %}
+		{% block container %}{% endblock %}
 		<footer>
 			<div class="row">
 			  <div class="col-lg-12">

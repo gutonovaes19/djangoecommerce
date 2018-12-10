@@ -1,0 +1,16 @@
+remote: Compressing source files... done.        
+remote: Building source:        
+remote: 
+remote: -----> Python app detected        
+remote:  !     Requested runtime (python-3.5.1) is not available for this stack (heroku-18).        
+remote:  !     Aborting.  More info: https://devcenter.heroku.com/articles/python-support        
+remote:  !     Push rejected, failed to compile Python app.        
+remote: 
+remote:  !     Push failed        
+remote: Verifying deploy...        
+remote: 
+remote: !	Push rejected to gutonovaes19-djangoecommerce.        
+remote: 
+To https://git.heroku.com/gutonovaes19-djangoecommerce.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/gutonovaes19-djangoecommerce.git'

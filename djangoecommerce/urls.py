@@ -21,15 +21,16 @@ from django.contrib import admin
 from core.views import index
 # struing de regex - ignora alguns caracteres. O Circuflexo indica inicio da string - estudar expressoes regulares
 # cifrão indica fim da url.
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from core import views
+from catalog import views
 
 urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^contato/$', views.contact, name='contact'),
     url(r'^produto/$', views.product, name='product'),
-    url(r'^produtos/$', views.product_list, name='product_list'),
+    url(r'^produtos/$', includr('catalog.urls', namespace = 'catalog')),
     url(r'^admin/', admin.site.urls),
 ]
