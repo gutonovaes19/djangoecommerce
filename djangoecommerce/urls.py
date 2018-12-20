@@ -1,3 +1,5 @@
+# coding=utf-8
+
 """djangoecommerce URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,12 +15,12 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-                # cifrão indica fim da url.
+# cifrao indica fim da url.
+
 from django.conf.urls import url, include
 from django.contrib import admin
 
 from core import views
-from catalog import views as views_catalog
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
